@@ -1,11 +1,12 @@
 # Criação de um modelo de Machine Learning RandonForest + API Flask
 
-### Modelo de floresta randômica criado em cima do dataset de imóveis.
+## Modelo de floresta randômica criado em cima do dataset de imóveis.
 
-#### Na etapa do modelo foram feitas as etapas dê:
--> ETL
+### Na etapa do modelo foram feitas as etapas dê:
 
--> Exploração de dados:
+### ETL
+
+#### Exploração de dados:
     
 Onde colunas e linhas foram renomeadas. Utilizando dois métodos, '.rename()' e '.replace()'.
 
@@ -15,7 +16,7 @@ Pesquisa por campos unicos, onde o método usado para buscar campos únicos foi 
 
 Após, utilizei o método '.dtypes.value_caounts()' para obter informação sobre a quantificação e tipos das colunas.
 
--> Exploração analítica dos dados, Tratamento e Limpeza dos dados:
+#### Exploração analítica dos dados, Tratamento e Limpeza dos dados:
 
 Nesta etapa começo a criar filtros para colunas numéricas e categóricas.
 Método utilizado: 
@@ -42,9 +43,9 @@ No próximo passo, crio gráficos para ter melhor viazualização dos dados e em
 Após criar o gráficos fiz analise dos outliers utlizando métodos do pandas, e faitas as análises nos dados, foram feitos filtros nos dados para tirar outliers.
 
 
--> Features:
+### Features:
 
--> Ajustes na colunas:
+#### Ajustes na colunas:
     
 Primeiro ajusto as colunas categoricas utlizando método '.map()', que mapeia os valores de
 series de acordo com a entrada.
@@ -56,13 +57,13 @@ Após filtrar dados, crio uma correlação para analisar o que pode ser usado pa
 "Person é um método estatísta que busca calcular a intensidade de associação linear de uma variável independente em a ralção a outra variável dependente. O coeficiente retorna valor entre -1 a 1, onde o valor mais baixo negativo indica uma correlação inversamente proporcional, o valor mais alto positivo indica correlação direta." 
     
                                                             
--> Início da separação do dados de teste e treino:
+#### Início da separação do dados de teste e treino:
 
 Foi utilizada a biblioteca scikit-learn, onde crio um método para geral o Score de cada coluna e ver qual relação de cada coluna com o modelo. 
 
 Segundo o Score quanto mais próximo de 1 mais proximo de uma correlação direta tem essa coluna para ser utlizada no modelo. (Parafraseando comentário dobre Pearson)
 
--> Construção do modelo:
+#### Construção do modelo:
 
 Modelo foi construindo com lib sklearn.ensemble.RandomForestRegressor <https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html>.
 
@@ -70,7 +71,7 @@ Com esse método podemos criar um medelo de Floresta Aleatória, que cria um sé
 
 O paramêtro utlizado nesse caso foi 'RandomForestRegressor( max_depth=5 )', onde essa função chama o método Random Foreste Regressor e o parâmetro 'max_depth=5' diz ao método o limíte da profundidade máxima da árvore. Caso não tivesse definido nenhum parâmentro, o modelo criaria 'nós' até que todas as folhas fosse puras.
 
--> Avaliação do modelo:
+#### Avaliação do modelo:
 
 Neste ponto crio um método para avaliar e metrificar o modelo utilizando o 'sklearn.metrics' <https://scikit-learn.org/stable/modules/model_evaluation.html>.
 
@@ -79,17 +80,17 @@ Utilizo método estatístico RMSE ou Raiz Quadrática Média dos Erros 'sklearn.
 Após estas métricas, utilizo a lib 'yellowbrick.regressor.PredictionError' para criar um gráfico que cria uma vizualização da melhor ajuste e a predição de erro no gráfico.
 
 
-Última etapa - Exportação de dados:
+### Última etapa - Exportação de dados:
 
--> Exporto dados:
+#### Exporto dados:
 
 Exporto dados utlizando a função 'joblib.dump()'.
 
--> Carrego e testo os dados exportados:
+#### Carrego e testo os dados exportados:
 
 Carrego os dados utlizando a função 'joblib.load()'.
 
--> Teste do modelo:
+#### Teste do modelo:
 
 Método utilizado - 'Funcao_Modelo_Carregado.predict( x_teste.head(1).values )'.
 
