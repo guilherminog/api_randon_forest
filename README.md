@@ -94,7 +94,7 @@ Carrego os dados utlizando a função 'joblib.load()'.
 
 Método utilizado - 'Funcao_Modelo_Carregado.predict( x_teste.head(1).values )'.
 
-
+    
 
 
 
