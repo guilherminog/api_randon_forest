@@ -16,7 +16,11 @@ def predict_(m2,quartos,banheiro,garagem,andar,animais,moveis,condominio,taxas):
         return {'Valor_Aluguel' : str(previsao)}
     except:
         return {'Aviso': 'Deu erro na função!'}
-    
+
+
+# Criar interação post para facilitar incluão e pesquisa de dados. 
+
+
    
 if __name__ == '__main__':
     app.run(debug=True)
