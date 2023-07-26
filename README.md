@@ -1,6 +1,6 @@
 # Criação de um modelo de Machine Learning RandonForest + API Flask
 
-## Modelo de floresta randômica criado em cima do dataset de imóveis.
+## Modelo de floresta randômica criado encima do dataset de imóveis.
 
 ### Na etapa do modelo foram feitas as etapas dê:
 
